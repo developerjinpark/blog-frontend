@@ -6,13 +6,13 @@ import Button from 'components/common/Button';
 
 const cx = classNames.bind(styles);
 
-const Header = ({postId, onRemove}) => (
+const Header = ({postId, onRemove, logged}) => (
     <header className={cx('header')}>
         <div className={cx('header-content')}>
             <div className={cx('brand')}>
                 <Link to="/">reactblog</Link>
             </div>
-            <div className={cx('right')}>
+            { logged && <div className={cx('right')}>
                 {
                     // rendering as array for keeping flex
                     postId && [
@@ -21,7 +21,7 @@ const Header = ({postId, onRemove}) => (
                     ]
                 }
                 <Button theme="outline" to="/editor">New Post</Button>
-            </div>
+            </div> }
         </div>
     </header>
 );

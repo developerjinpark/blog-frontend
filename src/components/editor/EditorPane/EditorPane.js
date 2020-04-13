@@ -16,11 +16,10 @@ import 'codemirror/theme/monokai.css';
 const cx = classNames.bind(styles);
 
 class EditorPane extends Component {
-
-    editor = null
-    codeMirror = null
-    cursor = null
-
+    editor = null;
+    codeMirror = null;
+    cursor = null;
+    
     initializeEditor = () => {
         this.codeMirror = CodeMirror(this.editor, {
             mode: 'markdown',
@@ -59,7 +58,7 @@ class EditorPane extends Component {
             codeMirror.setCursor(cursor);
         }
     }
-
+    
     render() {
         const { handleChange } = this;
         const { tags, title } = this.props;
